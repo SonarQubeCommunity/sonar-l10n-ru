@@ -22,23 +22,34 @@ package org.sonar.plugins.l10n;
 import static org.junit.Assert.assertThat;
 import static org.sonar.test.i18n.I18nMatchers.isBundleUpToDate;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.sonar.test.i18n.I18nMatchers;
 
 public class RussianPackPluginTest {
 
-  private static final String SONAR_VERSION = "2.11";
 
   @Ignore
   @Test
   public void coreBundleShouldBeUpToDate() {
-    assertThat("core_ru.properties", isBundleUpToDate(SONAR_VERSION));
+    assertThat("core_ru.properties", isBundleUpToDate());
   }
 
   @Ignore
   @Test
   public void gwtBundleShouldBeUpToDate() {
-    assertThat("gwt_ru.properties", isBundleUpToDate(SONAR_VERSION));
+    assertThat("gwt_ru.properties", isBundleUpToDate());
+  }
+
+  @Test
+  public void noExtensions() throws Exception {
+    Assertions.assertThat(new RussianPackPlugin().getExtensions()).isEmpty();
+  }
+
+  @Test
+  public void bundles_should_be_up_to_date() {
+    I18nMatchers.assertBundlesUpToDate();
   }
 
 }
