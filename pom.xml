@@ -12,6 +12,7 @@
   <artifactId>sonar-l10n-ru-plugin</artifactId>
   <packaging>sonar-plugin</packaging>
   <version>1.0-SNAPSHOT</version>
+  <description>Language Pack for Russia</description>
 
   <name>L10n :: Russian Pack</name>
   <inceptionYear>2011</inceptionYear>
@@ -50,6 +51,7 @@
       <groupId>org.codehaus.sonar</groupId>
       <artifactId>sonar-plugin-api</artifactId>
       <version>${sonar.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.codehaus.sonar</groupId>
